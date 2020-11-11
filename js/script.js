@@ -1,37 +1,41 @@
-let vfName = document.getElementById('fName')
-let vlName = document.getElementById('lName')
-let vdText = document.getElementById('dText')
-let vuEmail = document.getElementById('uEmail')
-let vuPhone = document.getElementById('uPhone')
-let textINNERHTML = document.getElementById('textINNERHTML')
-let textHTML = document.getElementById('textHTML')
+/// Variables:
+/// var_______: Variables storing the elements from within the document.
+/// parsed_____: Variables taking the input that is parsed from the elements within the document.
+/// profileText: Variable storing template for user's profile information
 
-/// The lines above store all the data from the elements with the specific ID inside the letiable to the left
+const varfName = document.getElementById('fName')
+const varlName = document.getElementById('lName')
+const vardText = document.getElementById('dText')
+const varuEmail = document.getElementById('uEmail')
+const varuPhone = document.getElementById('uPhone')
+const textINNERHTML = document.getElementById('textINNERHTML')
+const textHTML = document.getElementById('textHTML')
 
-let updateForm = function () {
-  let vvfName = vfName.value
-  let vvlName = vlName.value
-  let vvdText = vdText.value
-  let vvuEmail = vuEmail.value
-  let vvuPhone = vuPhone.value
+/// The lines above store all the data from the elements with the specific ID inside the constiable to the left
 
-  /// Stores the value of the IDed element from the top of the list into the letiable to the left.
+const updateForm = function () {
+  const parsedfName = varfName.value
+  const parsedlName = varlName.value
+  const parseddText = vardText.value
+  const parseduEmail = varuEmail.value
+  const parseduPhone = varuPhone.value
 
-  textINNERHTML.innerHTML =
-'<h1>Hi, my name is ' + vvfName + vvlName + '!</h1><p> ' + vvdText + ' </p><p>If you\'re interested in a date, you can email me at <a href="mailto:' + vvuEmail + '" target="_blank">' + vvuEmail + '</a> or give me a call at <a href="tel:' + vuPhone + '" target="_blank">' + vvuPhone + '</a>.</p>'
+  /// Stores the value of the IDed element from the top of the list into the constiable to the left.
 
-  /// Passes all the text and letiable's value from the list above and injects this text directly in the HTML document.
+  const profileText = '<h1>Hi, my name is ' + parsedfName + ' ' + parsedlName + '!</h1><p> ' + parseddText + ' </p><p>If you\'re interested in a date, you can email me at <a href="mailto:' + parseduEmail + '" target="_blank">' + parseduEmail + '</a> or give me a call at <a href="tel:' + parseduPhone + '" target="_blank">' + parseduPhone + '</a>.</p>'
+  /// Stores the profile in the variable.
 
-  textHTML.textContent =
-'<h1>Hi, my name is ' + vvfName + vvlName + '!</h1><p> ' + vvdText + ' </p><p>If you\'re interested in a date, you can email me at <a href="mailto:' + vvuEmail + '" target="_blank">' + vvuEmail + '</a> or give me a call at <a href="tel:' + vvuPhone + '" target="_blank">' + vvuPhone + '</a>.</p>'
+  textINNERHTML.innerHTML = profileText
+  /// Passes all the text and constiable's value from the list above and injects this text directly in the HTML document.
 
-  /// Passes all the text and letiable's value from the list above and injects this HTML directly in the HTML document.
+  textHTML.textContent = profileText
+  /// Passes all the text and constiable's value from the list above and injects this HTML directly in the HTML document.
 }
 
-vfName.addEventListener('input', updateForm)
-vlName.addEventListener('input', updateForm)
-vdText.addEventListener('input', updateForm)
-vuEmail.addEventListener('input', updateForm)
-vuPhone.addEventListener('input', updateForm)
+varfName.addEventListener('input', updateForm)
+varlName.addEventListener('input', updateForm)
+vardText.addEventListener('input', updateForm)
+varuEmail.addEventListener('input', updateForm)
+varuPhone.addEventListener('input', updateForm)
 
 /// Adds an event listener to each of these fields, watching when input is passed through.
